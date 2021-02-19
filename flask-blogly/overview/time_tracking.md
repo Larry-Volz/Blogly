@@ -6,6 +6,8 @@
 |2-18-21|8:50pm|8:56pm|:06|re-installing flask-debugtoolbar(?)|
 |2-18-21|8:57pm|9:27|:30|set up adding a user code|
 |2-18-21|9:30|10:15|:45|fooling around with bootstrap and formatting images|
-|2-18-21|10:15pm|?|?|?|
+|2-18-21|10:15pm|11:00|:45|fixed images and detail page and better seeding|
 |2-18-21|?|?|?|?|
-|---|---|TOTAL|2:01 hrs|---|
+|2-18-21|?|?|?|?|
+|2-18-21|?|?|?|?|
+|---|---|TOTAL|4:10 hrs|---|

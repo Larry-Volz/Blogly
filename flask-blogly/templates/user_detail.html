@@ -6,8 +6,9 @@
 <br />
 <h1>{{ user.first_name }} {{ user.last_name }}</h1>
     <img src="{{ user.img_url }}">
-    <form action="">
-        <button class="btn btn-success" action="submit" style="display:inline;">Modify</button>
+    <form>
+        <!-- note: formaction and formmethod instead of action/method since multiple buttons being used -->
+        <button class="btn btn-success" formaction="/users/{{user.id}}/edit" formmethod="GET" style="display:inline;">Edit</button>
         <button class="btn btn-danger" action="submit" style="display:inline;">Delete</button>
     </form>
 {% endblock %}

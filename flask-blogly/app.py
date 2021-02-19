@@ -24,7 +24,7 @@ def users_list():
 @app.route('/users')
 def users_and_form_link():
     """ shows users and a link for the form"""
-    users = User.query.all()
+    users = User.query.order_by(User.last_name, User.first_name).all()
     return render_template('users-and-form-link.html', users=users)
 
 @app.route('/users/new')
@@ -51,4 +51,25 @@ def add_new_user():
 def user_detail_page(user_id):
     user=User.query.get_or_404(user_id)
     return render_template("user_detail.html", user=user)
+
+@app.route('/users/<int:user_id>/edit')
+def edit_form(user_id):
+    ''' show editing form'''
+    user = User.query.get_or_404(user_id)
+    return render_template("edit_user.html", user=user)
+
+@app.route('/users/<int:user_id>/edit', methods=['POST'])
+def process_edit_form(user_id):
+    ''' process editing form and update the db'''
+    #get form data and update record in db
+    user = User.query.get_or_404(user_id)
+
+    user.first_name = request.form["first_name"]
+    user.last_name = request.form["last_name"]
+    user.img_url = request.form["img_url"]
+    
+    # db.session.update(user)
+    db.session.commit()
+
+    return redirect('/users')
 
