@@ -30,6 +30,6 @@ class User(db.Model):
     last_name = db.Column(db.String(50),
     nullable = False)
 
-    img_url = db.Column(db.String(100),
+    img_url = db.Column(db.String(255),
     nullable = True)
     

@@ -4,18 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.css">    
-    <title>{{ page_title}}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
+    
+    <title>{PUT CHANGEABLE TITLE HERE}</title>
 </head>
 <body>
     <div class="container">
         <div class="row">
             <h1 class="display-3">Blogly</h1>
-            <h2>A simple blogging app for simple programmers that's simply simple</h2>
-    <div id="inherited_content">
-        {% block content %}
-        {% endblock %}
-    </div>
+        </div>
+        <div class="row">
+            <p>A simple blogging app for simple programmers that's simply simple</p>
+        </div>
+        <div class="col-6-lg bg-success">
+            <div class="row">
+                <h3 class="display-2">Users</h3>
+            </div>
+            {% block content %}
+            {% endblock %}
         </div>
     </div>
 </body>
