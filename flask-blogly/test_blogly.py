@@ -24,7 +24,7 @@ class BloglyTestCase(TestCase):
     def test_users_new_post(self):
         '''test to see if /users/new with method = POST redirect properly to users'''
         with app.test_client() as test_server:
-            resp = test_server.post('/users/new',   	# send via POST to color form @app.route('/fav-color')
+            resp = test_server.post('/users/new',   	# send via POST to form @app.route('/users/new')
                             data={'first_name': 'Zaphod'})	#simulating the data the form would have returned
             html = resp.get_data(as_text=True)
 
