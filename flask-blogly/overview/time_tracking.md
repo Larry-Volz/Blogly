@@ -11,5 +11,6 @@
 |2-19-21|12:05am|12:20am|0:15|finished everything but the testing|
 |2-20-21|12:20|12:33|0:13|started planning tests but worn out|
 |2-20-21|6:08pm|6:42|0:34|worked on testing at laundromat|
-|2-20-21|?|?|?|?|
-|---|---|TOTAL|6:12 hrs|---|
+|2-20-21|8:00pm|8:42|0:42|finishing up assignment 1/integration tests with unittests|
+<!-- |2-20-21||?|?|?| -->
+|---|---|TOTAL|6:54 hrs|---|
