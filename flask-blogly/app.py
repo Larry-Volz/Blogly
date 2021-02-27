@@ -2,7 +2,7 @@
 
 from flask import Flask, request, render_template, redirect, flash, session 
 from models import db, connect_db, User
-from flask_debugtoolbar import DebugToolbarExtension
+# from flask_debugtoolbar import DebugToolbarExtension
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///blogly'
@@ -11,7 +11,7 @@ app.config['SQLALCHEMY_ECHO'] = True
 
 app.config['SECRET_KEY'] = "$blZacNat123"
 app.config['DEBUG_TB_INTERCEPT_REDIRECTS']= False
-debug = DebugToolbarExtension(app)
+# debug = DebugToolbarExtension(app)
 
 connect_db(app)
 db.create_all()
@@ -68,8 +68,16 @@ def process_edit_form(user_id):
     user.last_name = request.form["last_name"]
     user.img_url = request.form["img_url"]
     
-    # db.session.update(user)
+    # db.session.add(user) #don't need for an update
     db.session.commit()
 
     return redirect('/users')
 
+@app.route('/users/<int:user_id>/delete', methods=["POST"])
+def delete_user(user_id):
+    """delete specified user"""
+    user = User.query.get_or_404(user_id)
+    db.session.delete(user)
+    db.session.commit()
+
+    return redirect("/users")

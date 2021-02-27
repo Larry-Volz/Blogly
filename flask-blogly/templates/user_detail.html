@@ -9,6 +9,6 @@
     <form>
         <!-- note: formaction and formmethod instead of action/method since multiple buttons being used -->
         <button class="btn btn-success" formaction="/users/{{user.id}}/edit" formmethod="GET" style="display:inline;">Edit</button>
-        <button class="btn btn-danger" action="submit" style="display:inline;">Delete</button>
+        <button class="btn btn-danger" formaction="/users/{{user.id}}/delete" formmethod="POST" style="display:inline;">Delete</button>
     </form>
 {% endblock %}
