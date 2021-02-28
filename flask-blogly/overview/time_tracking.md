@@ -1,3 +1,4 @@
+# Time Tracking
 |started Date|Time|End-time|Duration|Notes|
 |:---|:---|:---|:---|:--|
 |2-17-21|9:40am|10:25|0:45|set up database, basic users table and flask app - table working|
@@ -12,5 +13,12 @@
 |2-20-21|12:20|12:33|0:13|started planning tests but worn out|
 |2-20-21|6:08pm|6:42|0:34|worked on testing at laundromat|
 |2-20-21|8:00pm|8:42|0:42|finishing up assignment 1/integration tests with unittests|
-<!-- |2-20-21||?|?|?| -->
 |---|---|TOTAL|6:54 hrs|---|
+(est. 4-6)
+
+## Part 2
+|started Date|Time|End-time|Duration|Notes|
+|:---|:---|:---|:---|:--|
+|2-28-21||4:10PM|?|?|
+|---|---|TOTAL|: hrs|---|
+(est. 4-6)
