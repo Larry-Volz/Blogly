@@ -23,6 +23,6 @@
 |2-28-21|4:10PM|4:45|0:35|set up model|
 |2-28-21|9:45PM|?|?|?|
 |2-28-21|9:45PM|10:00PM|0:15|touched up datetime/did backref|
-|2-28-21|PM|?|?|?|
-|---|---|TOTAL|0:35 hrs|---|
+|2-29-21|12:30AM|2:25|1:55|set up the create post page and it almost works - sent rqst to TA for help|
+|---|---|TOTAL|2:45 hrs|---|
 (est. 4-6)

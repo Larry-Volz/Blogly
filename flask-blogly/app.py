@@ -49,9 +49,10 @@ def add_new_user():
 
 @app.route('/users/<int:user_id>')
 def user_detail_page(user_id):
+    """ Show user detail with a list of this user's posts """
     user=User.query.get_or_404(user_id)
-    posts=Post.query.all(posts.usr == user_id)
-    return render_template("user_detail.html", user=user, posts=posts)
+    usrs_posts=Post.query.all(posts.user_id == user_id)
+    return render_template("user_detail.html", user=user, posts=usrs_posts)
 
 @app.route('/users/<int:user_id>/edit')
 def edit_form(user_id):
