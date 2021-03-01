@@ -4,6 +4,9 @@
 
 {% block content %}
 <br /><br />
+    <div class="row">
+        <h3 class="display-2"> <a href="/users">Users</a></h3>
+    </div>
     <ul>
     {% for user in users %}
         <li>{{ user.first_name }} {{ user.last_name }}</li>

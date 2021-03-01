@@ -1,4 +1,5 @@
 # Time Tracking
+## Part 1
 |started Date|Time|End-time|Duration|Notes|
 |:---|:---|:---|:---|:--|
 |2-17-21|9:40am|10:25|0:45|set up database, basic users table and flask app - table working|
@@ -19,6 +20,9 @@
 ## Part 2
 |started Date|Time|End-time|Duration|Notes|
 |:---|:---|:---|:---|:--|
-|2-28-21||4:10PM|?|?|
-|---|---|TOTAL|: hrs|---|
+|2-28-21|4:10PM|4:45|0:35|set up model|
+|2-28-21|9:45PM|?|?|?|
+|2-28-21|9:45PM|10:00PM|0:15|touched up datetime/did backref|
+|2-28-21|PM|?|?|?|
+|---|---|TOTAL|0:35 hrs|---|
 (est. 4-6)
