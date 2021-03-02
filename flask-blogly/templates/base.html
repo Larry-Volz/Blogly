@@ -11,14 +11,13 @@
 <body>
     <div class="container">
         <div class="row">
-            <h1 class="display-3">Blogly</h1>
-        </div>
-        <div class="row">
-            <p>A simple blogging app for simple programmers that's simply simple</p>
-        </div>
-        <div class="col-6-lg bg-success">
-            {% block content %}
-            {% endblock %}
+            <h1 class="display-3"><a href="/">Blogly</a></h1>
+            <div class="row justify-content-center">
+                <div class="col-sm-10 bg-success m-2">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
         </div>
     </div>
 </body>
