@@ -29,4 +29,13 @@
 |3-2-21|12:30am|1:05am|0:35|Finished all essential functionality - could be prettier, but it's done|
 |3-1-21|?|?|?|?|
 |---|---|TOTAL|5:20 hrs|---|
+
 (est. 4-6 Came in on time!  Skipped the extra study - can go back later, but need to finish the program on time)
+
+## Part 3
+|started Date|Time|End-time|Duration|Notes|
+|:---|:---|:---|:---|:--|
+|3-7-21|11:30pm|12:00|0:30|looked into composite primary keys and crashed. studied all day|
+|3-8-21|9:00am|?|?|Finished model/checked w/teacher's version|
+|3-8-21|?|?|?|?|
+|---|---|TOTAL| hrs|---|
