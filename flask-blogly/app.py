@@ -3,7 +3,7 @@
 #MAKE SURE RUNNING THIS IN flask-blogly SUBFOLDER AND GIT-TING IN THE PARENT FOLDER!
 
 from flask import Flask, request, render_template, redirect, flash, session 
-from models import db, connect_db, User, Post
+from models import db, connect_db, User, Post, Tag, PostTag
 # from flask_debugtoolbar import DebugToolbarExtension
 
 app = Flask(__name__)
@@ -148,3 +148,32 @@ def delete_post(post_id):
     db.session.commit()
     return redirect(f'/users/{user_id}')
 
+
+#TODO: finish with links to detail page for each tag
+@app.route('/tags')
+def list_tags():
+    """display list of all tags in use"""
+    tags = Tag.query.all()
+    return render_template('list-tags.html', tags=tags)
+
+@app.route('/tags/<int:tag_id>')
+def tag_detail(tag_id):
+    tag = Tag.query.get_or_404(tag_id)
+    posts = tag.posts
+    return render_template('tag_detail.html', tag=tag, posts=posts)
+
+@app.route('/tags/new')
+def create_tag():
+    return render_template('create-tag.html')
+
+@app.route('/tags/new', methods=['POST'])
+def store_new_tag():
+    # PROCESS TAG - SAVE IN DB AND PYTHON
+    tag_name = Tag(name = request.form["name"])
+
+    #store in postgres
+    db.session.add(tag_name)
+    db.session.commit()
+
+    # then redirect to tags list
+    return redirect('/tags')

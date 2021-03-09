@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- ??? How to put in 1st and last name from post_id??? -->
+<form class="form-group">
+    <div class="row">
+        <div class="col-sm-10">
+            <h1 class="display-2"> {{tag.name}}</h3>
+                <ul>
+                    {% for post in posts %}
+                        <li><a href="/posts/{{post.id}}">{{ post.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            <!-- TODO -->
+            <form action="">
+                <button class = "btn btn-primary" formaction="" formmethod="">Edit</button>
+                <button class = "btn btn-danger" formaction="" formmethod="">Delete</button>
+            </form>
+        </div>
+    </div>  
+ 
+
+
+</form>
+
+{% endblock %}

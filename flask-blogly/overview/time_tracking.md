@@ -36,6 +36,9 @@
 |started Date|Time|End-time|Duration|Notes|
 |:---|:---|:---|:---|:--|
 |3-7-21|11:30pm|12:00|0:30|looked into composite primary keys and crashed. studied all day|
-|3-8-21|9:00am|?|?|Finished model/checked w/teacher's version|
-|3-8-21|?|?|?|?|
-|---|---|TOTAL| hrs|---|
+|3-8-21|9:00am|11:00?|2:00|Finished model/checked w/teacher's version|
+|3-9-21|1:15AM|2AM|0:45|working on routes|
+|3-9-21|1:40pm|2:50|1:10|made some forms|
+|3-9-21|3:00pm|?|?|?|
+|3-9-21|?|?|?|?|
+|---|---|TOTAL|3:50 hrs|---|
