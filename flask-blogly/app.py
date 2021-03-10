@@ -4,6 +4,7 @@
 
 from flask import Flask, request, render_template, redirect, flash, session 
 from models import db, connect_db, User, Post, Tag, PostTag
+from sqlalchemy import desc
 # from flask_debugtoolbar import DebugToolbarExtension
 
 app = Flask(__name__)
@@ -20,8 +21,16 @@ db.create_all()
 
 
 @app.route('/')
-def users_list():
-    return redirect('/users')
+def home_page():
+    """Home page with recent blog entries"""
+    posts = Post.query.order_by(desc('created_at')).limit(4)
+    return render_template('index.html', posts=posts)
+
+@app.route('/posts')
+def all_posts():
+    """All blog entries"""
+    posts = Post.query.order_by(desc('created_at')).all()
+    return render_template('index.html', posts=posts)
 
 @app.route('/users')
 def users_and_form_link():
@@ -93,7 +102,8 @@ def delete_user(user_id):
 def add_post_form(user_id):
     """show form to create a new post"""
     user = User.query.get_or_404(user_id)
-    return render_template('post_form.html', user=user)
+    tags = Tag.query.all()
+    return render_template('post_form.html', user=user, tags=tags)
 
 @app.route('/users/<int:user_id>/posts/new', methods=['POST'])
 def add_store_new_post(user_id):
@@ -102,10 +112,16 @@ def add_store_new_post(user_id):
     new_post = Post(title=request.form['title'], 
     content=request.form["content"],
     user_id=user_id)
+    tags = request.form.getlist('tag_checkboxes')
 
     db.session.add(new_post)
     db.session.commit()
     
+    for tag in tags:
+        pt = PostTag(post_id = new_post.id, tag_id=tag)
+        db.session.add(pt)
+        db.session.commit()
+
     return redirect(f"/users/{user_id}")
 
 @app.route('/posts/<int:post_id>')
@@ -123,7 +139,8 @@ def edit_post(post_id):
     this_post = Post.query.get_or_404(post_id)
     # this_user=User.query.filter(User.id == this_post.user_id)
     this_user=User.query.filter(User.id == this_post.user_id).first()
-    return render_template('edit_post_form.html', user=this_user, post=this_post)
+    tags = Tag.query.all()
+    return render_template('edit_post_form.html', user=this_user, post=this_post, tags=tags)
 
 @app.route('/posts/<int:post_id>/edit', methods=['POST'])
 def edit_store_post(post_id):
@@ -143,8 +160,9 @@ def delete_post(post_id):
     """delete a single post"""
     post = Post.query.get_or_404(post_id)
     user_id = post.user_id
-    print(f"user_id: {user_id}, post_id:{post_id}")
-    Post.query.filter_by(id=post_id).delete()
+    # print(f"user_id: {user_id}, post_id:{post_id}")
+    # Post.query.filter_by(id=post_id).delete()
+    db.session.delete(post)
     db.session.commit()
     return redirect(f'/users/{user_id}')
 
@@ -176,4 +194,36 @@ def store_new_tag():
     db.session.commit()
 
     # then redirect to tags list
+    return redirect('/tags')
+
+@app.route('/tags/<int:tag_id>/edit')
+def edit_tag(tag_id):
+    tag = Tag.query.get(tag_id)
+    return render_template('edit-tag.html', tag=tag)
+
+
+@app.route('/tags/<int:tag_id>/edit', methods=['POST'])
+def store_edited_tag(tag_id):
+    # PROCESS TAG - SAVE IN DB AND PYTHON
+    tag=Tag.query.get(tag_id)
+    tag.name = request.form['name']
+    #store in postgres
+    # db.session.add(tag_name)
+    db.session.commit()
+    #after processing do this:
+    return redirect(f'/tags/{tag_id}') #tag_detail.html
+
+
+@app.route('/tags/<int:tag_id>/delete')
+def delete_tag(tag_id):
+    # #this works for an unassigned tag but doesn't cascade
+    # Tag.query.filter_by(id=tag_id).delete()
+    # db.session.commit()
+
+    tag = Tag.query.get_or_404(tag_id)
+    db.session.delete(tag)
+    db.session.commit()
+
+    flash(f"Tag '{tag.name}' deleted.")
+
     return redirect('/tags')

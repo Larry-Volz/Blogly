@@ -39,6 +39,14 @@
 |3-8-21|9:00am|11:00?|2:00|Finished model/checked w/teacher's version|
 |3-9-21|1:15AM|2AM|0:45|working on routes|
 |3-9-21|1:40pm|2:50|1:10|made some forms|
-|3-9-21|3:00pm|?|?|?|
-|3-9-21|?|?|?|?|
-|---|---|TOTAL|3:50 hrs|---|
+|3-9-21|3:00pm|3:20|:20|""|
+|3-9-21|7:15PM|7:50PM|0:35|finished all the routes but updated posts with checkboxes|
+|3-9-21|8:45PM|9:25|0:40|adding tag badges to posts, etc.|
+|3-9-21|11:15PM|12:20|1:05|Finished except tests|
+|---|---|TOTAL|7:05 hrs|---|
+
+Bonus:  Did home page
+|started Date|Time|End-time|Duration|Notes|
+|:---|:---|:---|:---|:--|
+|3-10-21|12:25PM|1:30|1:05|did home page|
+|---|---|TOTAL|1:05 hrs|---|

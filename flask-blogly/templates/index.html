@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2 class="display-1"><strong>Recent Posts</strong></h2>
+    {% for post in posts%}
+        <a href="/posts/{{post.id}}"><h3><strong>{{post.title}}</strong></h3></a>
+        <p><small>By <a href="/users/{{ post.user.id }}">{{post.user.first_name}} {{post.user.last_name}} </a>&nbsp;&nbsp;created {{post.created_at}}</small></p>
+        <!-- ??? why does this not work? post.friendly_date() -->
+        <br>
+        <p>{{post.content }}</p>
+        {% for tag in post.tags %}
+            <small><a href="/tags/{{tag.id}}"><span class = "badge badge-primary badge-pill m-2">{{ tag.name }}</span></a></small>
+        {% endfor %}
+    {% endfor %}
+{% endblock %}

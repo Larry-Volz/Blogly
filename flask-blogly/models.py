@@ -69,7 +69,7 @@ class Post(db.Model):
     @property
     def friendly_date(self):
         """Return nicely-formatted date - from teacher's example."""
-        return self.created_at.strftime("%a %b %-d  %Y, %-I:%M %p")
+        return self.created_at.strftime("%a %b %d  %Y, %I:%M %p")
 
 
 class PostTag(db.Model):
@@ -79,6 +79,7 @@ class PostTag(db.Model):
 
     post_id = db.Column(db.Integer, db.ForeignKey('posts.id'), primary_key=True)
     tag_id = db.Column(db.Integer, db.ForeignKey('tags.id'), primary_key=True)
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.datetime.now)
 
 
 class Tag(db.Model):

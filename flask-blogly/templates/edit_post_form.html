@@ -19,6 +19,11 @@
                 <textarea class="form-control" id="content" name="content">{{ post.content }}</textarea>
             </div>
     </div>
+    <h3>Tags</h3>
+    {% for tag in tags %}
+        <input type="checkbox" name="tag_checkboxes" value = "{{tag.id}}" {% if tag in post.tags %}checked{% endif %}> {{ tag.name }} <br>
+    {% endfor %}
+    <br>
     <div class="form-group row">
         <div class="ml-3">
             <input type="submit" value="cancel" name="cancel" class="btn btn-danger" formaction="/users/{{post.user_id}}" formmethod="GET">

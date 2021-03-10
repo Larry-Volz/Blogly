@@ -7,6 +7,11 @@
     <p><label for="content">Content</label></p>
     <p><input type="text" name="content" size="100%"></p>
     <!-- <label for="new_post">Add</label> -->
+    <h3>Tags</h3>
+    {% for tag in tags %}
+        <input type="checkbox" name="tag_checkboxes" value = "{{tag.id}}"> {{ tag.name }} <br>
+    {% endfor %}
+    <br>
     <input type="submit" value="cancel" name="cancel" class="btn btn-info" formaction="/" formmethod="GET">
     <input type="submit" value="add" name="new_post" class="btn btn-success" formaction="/users/{{user.id}}/posts/new" formmethod="POST">
 </form>

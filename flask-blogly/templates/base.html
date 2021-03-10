@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
     
-    <title>{PUT CHANGEABLE TITLE HERE}</title>
+    <title>{% block title %}Blogly{% endblock %}</title>
 </head>
 <body>
     <div class="container">
         <div class="row">
             <h1 class="display-3"><a href="/">Blogly</a></h1>
+            <p><small><a href="/posts">All Posts</a> | <a href="/tags">Tags</a> | <a href="/users">Users</a></small></p>
             <div class="row justify-content-center">
                 <div class="col-sm-10 bg-success m-2">
                     {% block content %}
