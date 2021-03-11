@@ -7,7 +7,7 @@ Blogly is a simple blogging app where multiple users can:
 
 It was written as a school assignment from scratch using Python, Flask, Jinja, Postgres, and SQLAlchemy with a little bit of bootstrap.
 
-To run it you must be in the flask-blogly subfolder.
+To run it you will need to check the requirements text, clone a copy and must be in the flask-blogly subfolder.
 
 Options for future development include:
 - Sign-in/sign-out capacity
