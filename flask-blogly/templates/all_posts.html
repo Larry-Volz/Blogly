@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h2 class="display-1"><strong>Recent Posts</strong></h2>
+    <h2 class="display-1"><strong>All Posts</strong></h2>
     {% for post in posts%}
         <a href="/posts/{{post.id}}"><h3><strong>{{post.title}}</strong></h3></a>
         <p><small>By <a href="/users/{{ post.user.id }}">{{post.user.first_name}} {{post.user.last_name}} </a>&nbsp;&nbsp;on {{post.friendly_date }}</small></p>

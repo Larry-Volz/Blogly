@@ -30,7 +30,7 @@ def home_page():
 def all_posts():
     """All blog entries"""
     posts = Post.query.order_by(desc('created_at')).all()
-    return render_template('index.html', posts=posts)
+    return render_template('all_posts.html', posts=posts)
 
 @app.route('/users')
 def users_and_form_link():
